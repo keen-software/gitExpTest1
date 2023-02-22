@@ -1,0 +1,37 @@
+pipeline:
+  name: Templates Matrix Sample
+  identifier: Templates_Matrix_Sample
+  projectIdentifier: playground
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: account.Nofar_Github
+        repoName: gitExpTest1
+        build: <+input>
+  stages:
+    - stage:
+        name: build
+        identifier: build
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Run_1
+                  identifier: Run_1
+                  spec:
+                    connectorRef: account.nofar_dockerhub
+                    image: alpine
+                    shell: Sh
+                    command: echo kk
