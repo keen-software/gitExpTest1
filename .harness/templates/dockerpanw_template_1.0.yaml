@@ -1,0 +1,16 @@
+template:
+  name: docker-panw template
+  type: Step
+  projectIdentifier: playground
+  orgIdentifier: default
+  spec:
+    type: Run
+    spec:
+      connectorRef: account.nofar_dockerhub
+      image: alpine
+      shell: Sh
+      command: |-
+        echo "iterating for value:"
+        echo <+matrix.myAxis>
+  identifier: dockerpanw_template
+  versionLabel: "1.0"
