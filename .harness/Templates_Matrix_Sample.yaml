@@ -33,16 +33,19 @@ pipeline:
                     shell: Sh
                     command: echo "running maven command"
               - step:
-                  type: Run
                   name: Run docker-panw pluing
                   identifier: Run_1
-                  spec:
-                    connectorRef: account.nofar_dockerhub
-                    image: alpine
-                    shell: Sh
-                    command: |-
-                      echo "iterating for value:"
-                      echo <+matrix.myAxis>
+                  template:
+                    templateRef: dockerpanw_template
+                    versionLabel: "1.0"
+                    templateInputs:
+                      type: Run
+                      strategy:
+                        matrix:
+                          myAxis:
+                            - itd
+                            - its
+                            - itp
         strategy:
           matrix:
             myAxis:
