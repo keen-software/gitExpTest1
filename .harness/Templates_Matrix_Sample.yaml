@@ -14,7 +14,6 @@ pipeline:
     - stage:
         name: build
         identifier: build
-        description: ""
         type: CI
         spec:
           cloneCodebase: true
@@ -34,4 +33,12 @@ pipeline:
                     connectorRef: account.nofar_dockerhub
                     image: alpine
                     shell: Sh
-                    command: echo kk
+                    command: |-
+                      echo "iterating for value:"
+                      echo <+matrix.myAxis>
+        strategy:
+          matrix:
+            myAxis:
+              - itd
+              - its
+              - itp
