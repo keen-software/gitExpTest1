@@ -27,7 +27,14 @@ pipeline:
             steps:
               - step:
                   type: Run
-                  name: Run_1
+                  name: maven
+                  identifier: maven
+                  spec:
+                    shell: Sh
+                    command: echo "running maven command"
+              - step:
+                  type: Run
+                  name: Run docker-panw pluing
                   identifier: Run_1
                   spec:
                     connectorRef: account.nofar_dockerhub
