@@ -14,9 +14,6 @@ template:
         echo <+matrix.myAxis>
     strategy:
       matrix:
-        myAxis:
-          - idp
-          - its
-          - its
+        myAxis: <+input>
   identifier: dockerpanw_template
   versionLabel: "1.0"
