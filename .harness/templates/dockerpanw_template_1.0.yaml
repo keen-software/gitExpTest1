@@ -12,5 +12,11 @@ template:
       command: |-
         echo "iterating for value:"
         echo <+matrix.myAxis>
+    strategy:
+      matrix:
+        myAxis:
+          - idp
+          - its
+          - its
   identifier: dockerpanw_template
   versionLabel: "1.0"
