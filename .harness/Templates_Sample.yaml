@@ -1,0 +1,55 @@
+---
+pipeline:
+  projectIdentifier: "playground"
+  orgIdentifier: "default"
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: "account.Nofar_Github"
+        repoName: "gitExpTest1"
+        build: "<+input>"
+  stages:
+  - stage:
+      name: "build"
+      identifier: "build"
+      type: "CI"
+      spec:
+        cloneCodebase: true
+        platform:
+          os: "Linux"
+          arch: "Amd64"
+        runtime:
+          type: "Cloud"
+          spec: {}
+        execution:
+          steps:
+          - step:
+              type: "Run"
+              name: "maven"
+              identifier: "maven"
+              spec:
+                shell: "Sh"
+                command: "echo \"running maven command\""
+          - step:
+              name: "publish to itd "
+              identifier: "Run_1"
+              template:
+                templateRef: "dockerpanw_template"
+                versionLabel: "1.0"
+                templateInputs:
+                  type: "Run"
+                  spec:
+                    command: "echo \"itd\""
+          - step:
+              name: "publish to itp"
+              identifier: "publish_to_itp"
+              template:
+                templateRef: "publish_to_itp"
+                versionLabel: "1.0"
+                templateInputs:
+                  type: "Run"
+                  spec:
+                    command: "echo \"itp\""
+  identifier: "teamplates_sample"
+  name: "Templates Sample"
