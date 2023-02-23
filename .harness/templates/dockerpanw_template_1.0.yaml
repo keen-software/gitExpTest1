@@ -9,7 +9,7 @@ template:
       connectorRef: account.nofar_dockerhub
       image: alpine
       shell: Sh
-      command: echo "publish to itd step"
+      command: <+input>
   identifier: dockerpanw_template
   versionLabel: "1.0"
   tags: {}
