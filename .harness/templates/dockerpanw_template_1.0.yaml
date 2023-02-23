@@ -1,5 +1,5 @@
 template:
-  name: docker-panw template
+  name: publish-to-itd
   type: Step
   projectIdentifier: playground
   orgIdentifier: default
@@ -9,11 +9,7 @@ template:
       connectorRef: account.nofar_dockerhub
       image: alpine
       shell: Sh
-      command: |-
-        echo "iterating for value:"
-        echo <+matrix.myAxis>
-    strategy:
-      matrix:
-        myAxis: <+input>
+      command: echo "publish to itd step"
   identifier: dockerpanw_template
   versionLabel: "1.0"
+  tags: {}
