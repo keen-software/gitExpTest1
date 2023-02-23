@@ -41,4 +41,4 @@ pipeline:
                     templateInputs:
                       type: Run
                       spec:
-                        command: itd
+                        command: echo "itd"
