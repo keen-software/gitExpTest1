@@ -1,0 +1,16 @@
+template:
+  name: publish to itp
+  identifier: publish_to_itp
+  versionLabel: "1.0"
+  type: Step
+  projectIdentifier: playground
+  orgIdentifier: default
+  spec:
+    type: Run
+    spec:
+      connectorRef: account.nofar_dockerhub
+      image: alpine
+      shell: Sh
+      command: <+input>
+    description: use for steps that publish to idp using the image plugins_docker itc-docker-dev-local.artifactory.paloaltonetworks.com/plugins/docker-panw
+  tags: {}
