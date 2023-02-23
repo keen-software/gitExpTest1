@@ -33,14 +33,12 @@ pipeline:
                     shell: Sh
                     command: echo "running maven command"
               - step:
-                  name: Run docker-panw pluing
+                  name: "publish to itd template "
                   identifier: Run_1
                   template:
                     templateRef: dockerpanw_template
                     versionLabel: "1.0"
-        strategy:
-          matrix:
-            myAxis:
-              - itd
-              - its
-              - itp
+                    templateInputs:
+                      type: Run
+                      spec:
+                        command: itd
