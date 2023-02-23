@@ -33,7 +33,7 @@ pipeline:
                     shell: Sh
                     command: echo "running maven command"
               - step:
-                  name: "publish to itd template "
+                  name: "publish to itd "
                   identifier: Run_1
                   template:
                     templateRef: dockerpanw_template
@@ -42,3 +42,13 @@ pipeline:
                       type: Run
                       spec:
                         command: echo "itd"
+              - step:
+                  name: publish to itp
+                  identifier: publish_to_itp
+                  template:
+                    templateRef: publish_to_itp
+                    versionLabel: "1.0"
+                    templateInputs:
+                      type: Run
+                      spec:
+                        command: echo "itp"
