@@ -10,6 +10,7 @@ template:
       image: alpine
       shell: Sh
       command: <+input>
+    description: use for steps that publish to idf using the image plugins_docker itc-docker-dev-local.artifactory.paloaltonetworks.com/plugins/docker-panw
   identifier: dockerpanw_template
   versionLabel: "1.0"
   tags: {}
