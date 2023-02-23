@@ -38,14 +38,6 @@ pipeline:
                   template:
                     templateRef: dockerpanw_template
                     versionLabel: "1.0"
-                    templateInputs:
-                      type: Run
-                      strategy:
-                        matrix:
-                          myAxis:
-                            - itd
-                            - its
-                            - itp
         strategy:
           matrix:
             myAxis:
